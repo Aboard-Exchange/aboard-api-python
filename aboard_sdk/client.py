@@ -1106,6 +1106,19 @@ class AboardRestAPi(RestClient):
         )
         return res.json()
 
+    def request_withdrawal(self, req: Dict=None) -> Dict:
+        data: dict = {"security": Security.SIGNED}
+
+        if req:
+            data.update(req)
+
+        res = self.request(
+            method="POST",
+            path="/api/v1/account/withdraw",
+            data=data
+        )
+        return res.json()
+
     # ----------------- others ----------------
     def _new_order_id(self) -> int:
         """generate a new client orderid"""
