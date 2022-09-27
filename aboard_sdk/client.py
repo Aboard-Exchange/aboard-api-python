@@ -1107,11 +1107,22 @@ class AboardRestAPi(RestClient):
         return res.json()
 
     def request_withdrawal(self, req: Dict=None) -> Dict:
+        '''
+        req:
+            {
+              "asset": "USDC",
+              "amount": "1000",
+              "destination": "0x2222...",  # destination only support the same withdraw address
+            }
+        return:
+            {
+              "code": 0,
+              "msg": ""
+            }
+        '''
         data: dict = {"security": Security.SIGNED}
-
         if req:
             data.update(req)
-
         res = self.request(
             method="POST",
             path="/api/v1/account/withdraw",
