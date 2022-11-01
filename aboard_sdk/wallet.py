@@ -19,7 +19,7 @@ testContractAddressMap = {"arbitrum": "0x6f2B2451A98ADC50e998ABd36347e7D7e10bC0E
                           "bsc": "0x8437CF451076A27b74D72A2dEBC189331431377B",
                           }
 
-# /代币合约地址
+# /contract address
 ardata = {
     'Decimals': 6,
     'Symbol': "USDC",
