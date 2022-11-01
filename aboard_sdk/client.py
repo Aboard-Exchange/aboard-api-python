@@ -365,15 +365,15 @@ class AboardRestAPi(RestClient):
             "price": '',
             "quantity": '',
             "clientOrderId": '',
-            "reduceOnly": "FALSE",
+            "reduceOnly": False,
             "stopPrice": 0,
             "positionSide": "",
-            "closePosition": "FALSE",
+            "closePosition": False,
             "activationPrice": 0,
             "callbackRate": 0.0,
             "timeInForce": "GTC",
             "workingType": "LAST_PRICE",
-            "priceProtect": "FALSE"
+            "priceProtect": False
         }
         data: dict = {
             "security": Security.SIGNED
