@@ -1,5 +1,6 @@
 import time
 from aboard_sdk.client import AboardRestAPi
+from aboard_sdk.wallet import Wallet
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
     proxy_port = 0
 
     host = 'https://api.aboard.exchange/arbitrum'
+    # host = 'https://api.aboard.exchange/avalanche'
     client.connect(address, private_key, proxy_host, proxy_port, host)
 
     # ------------------------------------
@@ -37,6 +39,25 @@ def main():
     #     "limit": 100,
     # }
     # res = client.get_bills(req)
+    # print(res)
+
+    # --------------- withdraw ---------------------
+    # req = {
+    #     "asset": "USDC",
+    #     "amount": "11",
+    #     # destination only support the same withdraw address
+    #     "destination": "xxxx",
+    # }
+    # client.connect(address, private_key, proxy_host, proxy_port, host)
+    # res = client.request_withdrawal(req)
+    # print(res)
+    # signature = res['data']['signature']
+    # withdrawId = res['data']['withdrawId']
+    # timestamp = res['data']['expiringTimestamp']
+
+    # wallet = Wallet()
+    # wallet.connect('arbitrum', private_key=private_key)
+    # res = wallet.withdraw(token_symbol=req['asset'], amount=req['amount'], withdrawid=withdrawId, timestamp=timestamp, **signature, )
     # print(res)
 
     # ------------------------------------
