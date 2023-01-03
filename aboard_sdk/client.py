@@ -1116,8 +1116,15 @@ class AboardRestAPi(RestClient):
             }
         return:
             {
-              "code": 0,
-              "msg": ""
+                'code': 0,
+                'msg': '',
+                'data': {  # web3 contract function params
+                    'withdrawId': '50211378',
+                    'signature': {
+                        'r': '0x329513eb636b9b41e4afaddeb922f8627050d3acb3a890abcd811a684af49600',
+                        's': '0x662e778fc59145f58e1c9d127c13f04163b3519b423e017b7c965f9564c3e3c1',
+                        'v': '0x1c'},
+                    'expiringTimestamp': 1672718184}
             }
         '''
         data: dict = {"security": Security.SIGNED}
